@@ -7,6 +7,7 @@
 #include "MFCMenu.h"
 #include "MFCMenuDlg.h"
 #include "afxdialogex.h"
+#include "CLogin.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -65,6 +66,7 @@ BEGIN_MESSAGE_MAP(CMFCMenuDlg, CDialogEx)
 	ON_WM_SYSCOMMAND()
 	ON_WM_PAINT()
 	ON_WM_QUERYDRAGICON()
+	ON_COMMAND(ID_LOGIN, &CMFCMenuDlg::OnLogin)
 END_MESSAGE_MAP()
 
 
@@ -153,3 +155,10 @@ HCURSOR CMFCMenuDlg::OnQueryDragIcon()
 	return static_cast<HCURSOR>(m_hIcon);
 }
 
+
+void CMFCMenuDlg::OnLogin()
+{
+	// TODO: Add your command handler code here
+	CLogin login;
+	login.DoModal();
+}
